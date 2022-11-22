@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css"
+  href="https://static.freshdev.io/fdk/2.0/assets/freshdesk.css" />
+</head>
+<body>
+    <form>
+        <label for="iparams">Enter the Domain</label>
+        <input type="text" id="iparamsDomain" name="iparams" placeholder="Enter the Domain">
+        <br>
+        <br>
+        <label for="iparams">Enter the API Key</label>
+        <input type="text" id="iparamsKey" name="iparams" value="">
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="">
+        <br>
+        <br>
+        <label for="group">Group</label>
+        <select id="group" class="input">
+            <option disabled selected>Choose a Group</option>
+        </select>
+    </form>
+    <script type="text/javascript"  src="./assets/iparams.js"></script>
+  <script>
+    function postConfigs() {
+      return {
+        iparamsDomain:document.querySelector('#iparamsDomain').value,
+        iparamsKey:document.querySelector('#iparamsKey').value,
+        email:document.querySelector('#email').value,
+        group: document.querySelector("#group").value,
+      };
+    }
+
+    function getConfigs(savedConfigs) {
+      if (savedConfigs) {
+        document.getElementById('#group').value = savedConfigs.group;
+      }
+    }
+    </script>
+</body>
+</html>
